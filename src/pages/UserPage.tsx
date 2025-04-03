@@ -1,14 +1,14 @@
 import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 
-const Home: React.FC = () => {
+const UserPage: React.FC = () => {
   return ( 
     <BaseLayout>
       <div className='text-text'>
-        <p>Home</p>
+        <p>UserPage</p>
       </div>
     </BaseLayout>
   );
 };
 
-export default Home;
+export default UserPage;
