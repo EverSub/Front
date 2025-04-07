@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseLayout from '../layouts/BaseLayout';
+import BaseLayout from '../../layouts/BaseLayout';
 
 const UserPage: React.FC = () => {
   return ( 

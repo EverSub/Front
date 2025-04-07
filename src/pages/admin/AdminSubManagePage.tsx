@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseLayout from '../layouts/BaseLayout';
+import BaseLayout from '../../layouts/BaseLayout';
 
-const Home: React.FC = () => {
+const AdminSubManagePage: React.FC = () => {
   return ( 
     <BaseLayout>
       <div className='text-text'>
@@ -11,4 +11,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default AdminSubManagePage;
