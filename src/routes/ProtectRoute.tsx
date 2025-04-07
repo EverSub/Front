@@ -5,11 +5,16 @@ interface ProtectedRouteProps {
   element: JSX.Element;
   isAuthenticated: boolean;
   role: string;
-  redirectTo?: string;
+  allow: string;
 }
 
-const ProtectedRoute = ({ element, isAuthenticated, redirectTo = '/login' }: ProtectedRouteProps) => {
-  return isAuthenticated ? element : <Navigate to={redirectTo} replace />;
+const ProtectedRoute = ({ element, isAuthenticated, role, allow }: ProtectedRouteProps) => {
+
+  if (!isAuthenticated) return <Navigate to={'/login'} replace />;
+
+  if (role !== allow) return <Navigate to={'/'} replace />;
+
+  return element;
 };
 
 export default ProtectedRoute;
