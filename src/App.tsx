@@ -1,20 +1,16 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import UserPage from './pages/UserPage';
-import AdminPage from './pages/AdminPage';
-import LoginPage from './pages/LoginPage';
+import UserPage from './pages/user/UserPage';
+import AdminPage from './pages/admin/AdminPage';
+import LoginPage from './pages/commons/LoginPage';
 import ProtectedRoute from './routes/ProtectRoute';
+import UserSubManagePage from './pages/user/UserSubManagePage';
 
 function App() {
-  const isAuthenticated = false; // TODO: 실제 상태로 대체
+  const isAuthenticated = true; // TODO: 실제 상태로 대체
   const role = 'user';        // TODO: 실제 상태로 대체  
 
   return (
     <Routes>
-      <Route path="/" element={
-        isAuthenticated ? <Home /> : <Navigate to="/login" replace />
-      } />
-
       <Route path="/login" element={
         isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />
       } />
@@ -30,6 +26,13 @@ function App() {
         path="/user"
         element={
           <ProtectedRoute isAuthenticated={isAuthenticated} role={role} element={<UserPage />} />
+        }
+      />
+
+      <Route
+        path="/user/subManage"
+        element={
+          <ProtectedRoute isAuthenticated={isAuthenticated} role={role} element={<UserSubManagePage />} />
         }
       />
     </Routes>

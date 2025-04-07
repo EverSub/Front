@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BaseLayout from '../layouts/BaseLayout';
-import Input from '../components/commons/Input';
+import BaseLayout from '../../layouts/BaseLayout';
+import Input from '../../components/commons/Input';
 
 const LoginPage: React.FC = () => {
   const [loginParams, setLoginParams] = useState({
