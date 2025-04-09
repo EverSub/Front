@@ -9,7 +9,7 @@ interface OptionListProps {
 
 const OptionList: React.FC<OptionListProps> = ({ options, onSubscribe }) => {
   return (
-    <div className="grid grid-cols-2 gap-6 w-3/4">
+    <div className="flex gap-6 w-full">
       {options.map((opt, idx) => (
         <OptionCard key={idx} {...opt} onSubscribe={() => onSubscribe(opt.name)} />
       ))}

@@ -7,7 +7,7 @@ interface ServiceListProps {
 
 const ServiceList: React.FC<ServiceListProps> = ({ services, onSelect }) => {
   return (
-    <div className="flex flex-col gap-4 w-1/4">
+    <div className="flex flex-col gap-4 w-full">
       {services.map(service => (
         <div
           key={service.id}
